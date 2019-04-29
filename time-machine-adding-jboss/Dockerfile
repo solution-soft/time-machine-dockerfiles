@@ -62,8 +62,5 @@ RUN cd $HOME \
 
 COPY config /
 
-# Ensure signals are forwarded to the JVM process correctly for graceful shutdown
-ENV LAUNCH_JBOSS_IN_BACKGROUND true
-
 # Expose the ports we're interested in
 EXPOSE 8080
