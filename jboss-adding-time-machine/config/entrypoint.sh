@@ -5,7 +5,7 @@ set -u
 
 # Run startup scripts
 
-if [ "$(ls /inittask/)" ]; then
+if [ -d /inittask ] && [ "$(ls /inittask/*.sh)" ]; then
   for init in /inittask/*.sh; do
     . $init
   done
@@ -14,12 +14,11 @@ if [ "$(ls /inittask/)" ]; then
 fi
 
 # If we have an interactive container
-if test -t 0; then
-  # Execute commands passed to container and exit, or run bash
+if [[ -t 0 || -p /dev/stdin ]]; then
+    export PS1='[\u@\h : \w]\$ '
   if [[ $@ ]]; then 
     eval $@
   else 
-    export PS1='[\u@\h : \w]\$ '
     /bin/bash
   fi
 
