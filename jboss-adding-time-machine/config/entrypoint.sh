@@ -7,7 +7,7 @@ set -u
 
 if [ -d /inittask ] && [ "$(ls /inittask/*.sh)" ]; then
   for init in /inittask/*.sh; do
-    . $init
+    sh $init
   done
   # no need to run it again
   rm -f /inittask/*.sh
@@ -17,9 +17,9 @@ fi
 if [[ -t 0 || -p /dev/stdin ]]; then
     export PS1='[\u@\h : \w]\$ '
   if [[ $@ ]]; then 
-    eval $@
+    eval "exec $@"
   else 
-    /bin/bash
+    exec /bin/bash
   fi
 
 # If container is detached run superviord in the foreground 
