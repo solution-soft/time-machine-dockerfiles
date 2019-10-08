@@ -8,3 +8,5 @@ JBOSS_HOME=/opt/jboss/wildfly
 # Fix permissions for the running environment
 chown -R jboss:root $JBOSS_HOME
 chmod -R g+w $JBOSS_HOME
+
+exit 0
