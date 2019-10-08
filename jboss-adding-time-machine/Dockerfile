@@ -1,11 +1,13 @@
-FROM jboss/wildfly:latest
+FROM jboss/wildfly:18.0.0.Final
 
 LABEL vendor="SolutionSoft Systems, Inc"
 LABEL maintainer="kzhao@solution-soft.com"
 
 ARG PYTHON_VERSION=3.6
 ARG TM_VERSION=12.9R3
-ARG TINI_VERSION=v0.18.0 
+ARG TINI_VERSION=v0.18.0
+ARG WILDFLY_VERSION 18.0.0.Final
+ARG WILDFLY_SHA1 2d4778b14fda6257458a26943ea82988e3ae6a66
 
 ENV PATH=$HOME/.local/bin/:$PATH \
     PYTHONUNBUFFERED=1 \

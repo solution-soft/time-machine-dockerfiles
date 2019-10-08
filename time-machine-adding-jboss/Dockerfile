@@ -45,8 +45,8 @@ ENV JAVA_HOME /usr/lib/jvm/java
 #  See https://github.com/jboss-dockerfiles/wildfly/blob/master/Dockerfile
 
 # Set the WILDFLY_VERSION env variable
-ENV WILDFLY_VERSION 16.0.0.Final
-ENV WILDFLY_SHA1 287c21b069ec6ecd80472afec01384093ed8eb7d
+ENV WILDFLY_VERSION 18.0.0.Final
+ENV WILDFLY_SHA1 2d4778b14fda6257458a26943ea82988e3ae6a66
 ENV JBOSS_HOME /opt/jboss/wildfly
 
 # Add the WildFly distribution to /opt, and make wildfly the owner of the extracted tar content
